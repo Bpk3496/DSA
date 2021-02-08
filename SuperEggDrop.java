@@ -36,7 +36,8 @@ class Solution {
             int temp=1+Math.max(down_temp,up_temp); //adding one because we have used 1 attempt and max of up and             
             ans=Math.min(temp,ans);//this is beacuse we need minimum of all worst case attempts 
         }
-        return dp[K][N]=ans;
+        dp[K][N] = ans;
+        return dp[K][N];
     }
 }
 // class Solution {

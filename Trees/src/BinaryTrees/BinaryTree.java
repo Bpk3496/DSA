@@ -94,15 +94,18 @@ public class BinaryTree {
         if(root == null) return result;
     
         Stack<Node> stack1 = new Stack<>();        
-        
         Node currentNode = node;
-        while(!stack1.isEmpty()  || currentNode != null ) {
+        
+        while(currentNode != null || !stack1.isEmpty()) {
+        	
         	if(currentNode != null) {
         		stack1.push(currentNode);
         		currentNode = currentNode.left;
         	}
+        	
         	else {
         		Node tempNode  = stack1.peek().right;
+        		
 	        		if(tempNode == null) {
 	        			tempNode = stack1.pop();
 	        			result.add(tempNode.data);
@@ -111,13 +114,12 @@ public class BinaryTree {
 	        				tempNode = stack1.pop();
 	        				result.add(tempNode.data);
 	        			}
-	        			
 	        		}
 	        		else 
 	        			currentNode = tempNode;
         	}	
         }
-        System.out.println("returing result as "+ result);
+       
         return result;
 	}
 	

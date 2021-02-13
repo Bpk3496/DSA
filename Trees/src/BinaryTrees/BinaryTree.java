@@ -87,7 +87,36 @@ public class BinaryTree {
 		}
 		
 		return result;
-	} 
+	}
+	
+	public ArrayList<Integer> postOrderTraversalIterative(Node node) {
+			ArrayList<Integer> result = new ArrayList<>();    
+	        if(root == null) return result;
+	    
+	        Stack<Node> stack1 = new Stack<>();
+	        Stack<Node> stack2 = new Stack<>();
+	      
+	        stack1.push(root);
+	      
+	        while(!stack1.isEmpty()) {
+	            node = stack1.pop();
+	            stack2.push(node);
+	            
+	            if(node.left != null) 
+	                stack1.push(node.left);
+	            if(node.right != null)
+	                stack1.push(node.right);
+	            
+	        }
+	        
+	       while(!stack2.isEmpty()) {
+	            node = stack2.pop();
+	            result.add(node.data);
+	        }
+	       
+	        return result;   
+	    }
+	
 	public static void main(String[] args) {
 		
 			BinaryTree tree = new BinaryTree();
@@ -110,6 +139,8 @@ public class BinaryTree {
 	        System.out.println(tree.preOrderTraversalIterative(tree.root));
 	        System.out.println("\nIterative Inorder traversal of binary tree is "); 
 	        System.out.println(tree.inOrderTraversalIterative(tree.root));
+	        System.out.println("\nIterative postorder traversal of binary tree is ");	      
+	        System.out.println(tree.postOrderTraversalIterative(tree.root));
 	}
 
 }

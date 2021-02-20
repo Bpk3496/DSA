@@ -3,11 +3,11 @@ package BinaryTrees;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class BinaryTree {
+public class BinaryTreeTraversals {
 	
 	Node root; 
 
-	public BinaryTree() {
+	public BinaryTreeTraversals() {
 		root = null;
 	}
 	
@@ -153,7 +153,7 @@ public class BinaryTree {
 
 	public static void main(String[] args) {
 		
-			BinaryTree tree = new BinaryTree();
+			BinaryTreeTraversals tree = new BinaryTreeTraversals();
 			
 			tree.root = new Node(1); 
 	        tree.root.left = new Node(2); 

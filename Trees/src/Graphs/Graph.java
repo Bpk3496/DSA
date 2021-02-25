@@ -7,23 +7,34 @@ class Graph {
 	
 	public ArrayList<ArrayList<Integer>> graph;
 	
+	
 	public Graph(int v) {
-		graph = new ArrayList<>();
+		graph = new ArrayList<ArrayList<Integer>>();
 		
 		for(int i=0; i<v; i++)  {
-			graph.add(new ArrayList<>());
+			graph.add(new ArrayList<Integer>());
 		}
 	}
 	
 	public void addEdges(int source, int destination) {
 		graph.get(source).add(destination);
-		graph.get(destination).add(source);
+//		graph.get(destination).add(source);
 	}
 	
+	public 	void printGraph(int vertices) {
+		System.out.println("Graph  : ");
+		
+		for(int i=0; i < vertices;i++) {
+			System.out.print(i+" :");
+			for(int j : graph.get(i)) 
+				System.out.print("->"+j);
+			System.out.println();
+		}
+	}
 		public static void main(String args[]) {
 			Scanner sc = new Scanner(System.in);
 			
-			Graph g = new Graph(6);
+			Graph g = new Graph(5);
 			
 //			System.out.println("enter number of vertices");
 //			int v = sc.nextInt();
@@ -39,21 +50,14 @@ class Graph {
 //				int destination = sc.nextInt();
 //				g.addEdges(source, destination);
 //			}
-			
-			g.addEdges(0, 1);
-			g.addEdges(0, 2);
-			g.addEdges(1, 2);
-			g.addEdges(2, 0);
-			g.addEdges(2, 3);
-			g.addEdges(3, 3);
-	        
-			System.out.println("our built graph  is: ");
-			for(int i=0; i < 6;i++) {
-				System.out.print("Node "+i+" :");
-				for(int j : g.graph.get(i)) 
-					System.out.print(j+" ");
-				System.out.println();
-			}
-			sc.close();
+			   g.addEdges(0, 1); 
+			   g.addEdges(2, 1); 
+			   g.addEdges(2, 3); 
+			   g.addEdges(3, 4); 
+			   g.addEdges(4, 0); 
+			   g.addEdges(4, 2); 
+		       
+			g.printGraph(5);
+		sc.close();
 		}
 }

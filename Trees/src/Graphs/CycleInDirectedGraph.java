@@ -11,10 +11,10 @@ public class CycleInDirectedGraph {
 	
 	public CycleInDirectedGraph(int vertices) {
 		this.vertices = vertices;
-		graph = new ArrayList<>(vertices);
+		graph = new ArrayList<>();
 		
 		for(int i=0; i < vertices;i++) {
-			graph.add(new LinkedList<>());
+			graph.add(new ArrayList<>());
 		}
 	}
 	
@@ -65,7 +65,7 @@ public class CycleInDirectedGraph {
 		graph.addEdge(1, 2); 
 		/*graph.addEdge(2, 0); */ 
 		graph.addEdge(2, 3); 
-		/* graph.addEdge(3, 3); */
+		 graph.addEdge(3, 3); 
         
 	        if(graph.isCyclic()) 
 	        	System.out.println("Graph is cyclic");

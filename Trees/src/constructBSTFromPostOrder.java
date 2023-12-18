@@ -18,8 +18,7 @@ class BST {
         if(root == null)
             return;
         inorder(root.left);
-        System.out.print(root.val);
-        System.out.print(" ");
+        System.out.print(root.val + " ");
         inorder(root.right);
     }
     private static Node constructBSTFromPostOrder(int[] nums, int left, int right) {

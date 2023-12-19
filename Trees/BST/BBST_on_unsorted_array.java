@@ -25,8 +25,7 @@ class BST {
       	int size = queue.size();        
         	for(int i=0; i<size;i++) {
               Node temp = queue.poll();
-            	System.out.print(temp.val);
-              	System.out.print(" ");
+            	System.out.print(temp.val + " ");
               if(temp.left != null)
               	queue.add(temp.left);
               if(temp.right != null)
@@ -45,8 +44,8 @@ class BST {
       root.right = constructBBST(nums, mid+1, right);
       return root;
     }
-    public static void main(String args[]) {
-        int arr[] = {8, 6 , 12, 18, 34, 23, 3};
+    public static void main(String[] args) {
+        int[] arr = {8, 6 , 12, 18, 34, 23, 3};
         Arrays.sort(arr);
         Node root = constructBBST(arr, 0, arr.length-1);
         preorder(root);
